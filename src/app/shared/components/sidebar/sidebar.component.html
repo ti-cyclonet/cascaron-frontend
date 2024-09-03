@@ -1,0 +1,18 @@
+<div class="sidebar" id="sidebar">
+  
+  <div class="icon-menu pt-3">
+    <a *ngFor="let option of optionsMenu"
+      [routerLink]="option.url"
+      routerLinkActive="active"
+      [ngStyle]="{
+        'position': option.name === 'Settings' ? 'fixed' : 'relative',
+        'bottom': option.name === 'Settings' ? '0' : 'auto'
+      }"
+      class="menu-item">
+      <svg fill="currentcolor" viewBox="0 0 16 16">
+        <use [attr.xlink:href]="'./assets/icons/bootstrap-icons.svg#' + option.icon"></use>
+      </svg>
+      {{ option.name }}
+    </a>
+  </div>
+</div>
