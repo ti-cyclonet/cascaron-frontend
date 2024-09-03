@@ -1,0 +1,88 @@
+/* Estilo general para la barra lateral */
+.sidebar {
+    background-color: var(--sidebar-background-color); /* Color de fondo de la barra lateral */
+    height: 100vh; /* Altura completa de la vista */
+    width: 100px; /* Ancho de la barra lateral por defecto */
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centrar contenido horizontalmente */
+    padding-top: 2.3rem; /* Espacio arriba */
+    position: fixed; /* Fija la barra lateral */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté sobre otros contenidos */
+    transition: transform 0.3s ease; /* Transición suave para mostrar/ocultar */
+    border-right: 2px solid black;
+}
+
+/* Estilo del botón de toggle en la barra lateral */
+.sidebar-toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que esté por encima del contenido */
+    display: none; /* Ocultar por defecto y mostrar en pantallas pequeñas */
+}
+
+/* Estilo de los íconos dentro del botón de toggle */
+.sidebar-toggle-btn svg {
+    fill: var(--header-icon-color);
+    width: 24px; /* Ajusta según sea necesario */
+    height: 24px; /* Ajusta según sea necesario */
+}
+
+/* Estilo de los ítems del menú */
+.menu-item {
+    color: var(--primary-text-color);
+    margin-bottom: 1.8rem; /* Espacio entre íconos */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar texto e ícono */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    width: 100px;
+}
+
+/* Estilo de los íconos en la barra lateral */
+.menu-item svg {
+    width: 36px; /* Tamaño del ícono */
+    height: 36px; /* Tamaño del ícono */
+    fill: var(--primary-text-color); /* Color del ícono */
+    margin-bottom: 0.5rem; /* Espacio entre ícono y texto */
+}
+
+/* Estilo del texto en los ítems del menú */
+.menu-item div {
+    font-size: 14px; /* Tamaño del texto */
+    text-align: center;
+}
+
+/* Estilo de los íconos y texto cuando se pasa el cursor */
+.menu-item:hover,
+.menu-item.active {
+    color: var(--primary-active-text-color); /* Color del texto en hover y activo */
+}
+
+.menu-item:hover svg,
+.menu-item.active svg {
+    fill: var(--primary-active-text-color); /* Color del ícono en hover y activo */
+    transform: scale(1.2); /* Escalar el ícono en hover y activo */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100px; /* Ancho de la barra lateral por defecto */
+        transform: translateX(0); /* Muestra la barra lateral */
+        border-right: 2px solid black;
+    }
+
+    /* Asegurarse de que los ítems del menú estén centrados */
+    .menu-item {
+        margin-bottom: 1rem; /* Espacio más pequeño entre íconos para pantallas pequeñas */
+    }
+}
+
