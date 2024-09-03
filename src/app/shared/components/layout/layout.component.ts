@@ -22,7 +22,13 @@ import { FooterComponent } from '../footer/footer.component';
 export default class LayoutComponent implements OnInit {
   optionsMenu: OptionMenu[] = [];
   isSidebarVisible = false;
-  isLargeScreen = window.innerWidth >= 992;
+  isLargeScreen = false;
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.isLargeScreen = window.innerWidth >= 992;
+    }
+  }
 
   ngOnInit(): void {
     this.optionsMenu = [
@@ -39,7 +45,8 @@ export default class LayoutComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.isLargeScreen = window.innerWidth >= 992;
+    if (typeof window !== 'undefined') {
+      this.isLargeScreen = window.innerWidth >= 992;
+    }
   }
-  
 }
