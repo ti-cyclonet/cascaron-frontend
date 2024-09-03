@@ -75,6 +75,7 @@
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 991.98px) {
     .sidebar {
+        padding-top: 50px;
         width: 100px; /* Ancho de la barra lateral por defecto */
         transform: translateX(0); /* Muestra la barra lateral */
         border-right: 2px solid black;
@@ -82,7 +83,7 @@
 
     /* Asegurarse de que los ítems del menú estén centrados */
     .menu-item {
-        margin-bottom: 1rem; /* Espacio más pequeño entre íconos para pantallas pequeñas */
+        margin-bottom: 1.5rem; /* Espacio más pequeño entre íconos para pantallas pequeñas */
     }
 }
 
