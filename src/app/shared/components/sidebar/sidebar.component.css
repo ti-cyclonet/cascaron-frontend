@@ -1,18 +1,18 @@
 /* Estilo general para la barra lateral */
 .sidebar {
-    background-color: var(--sidebar-background-color); /* Color de fondo de la barra lateral */
-    height: 100vh; /* Altura completa de la vista */
-    width: 100px; /* Ancho de la barra lateral por defecto */
+    background-color: var(--sidebar-background-color);
+    height: 100vh;
+    width: 100px;
     display: flex;
-    flex-direction: column; /* Alineación vertical */
-    align-items: center; /* Centrar contenido horizontalmente */
-    padding-top: 2.3rem; /* Espacio arriba */
-    position: fixed; /* Fija la barra lateral */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.3rem;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Asegura que esté sobre otros contenidos */
-    transition: transform 0.3s ease; /* Transición suave para mostrar/ocultar */
+    z-index: 1000;
     border-right: 2px solid black;
+    transition: transform 0.3s ease;
 }
 
 /* Estilo del botón de toggle en la barra lateral */
@@ -23,67 +23,140 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1001; /* Asegura que esté por encima del contenido */
-    display: none; /* Ocultar por defecto y mostrar en pantallas pequeñas */
+    z-index: 1001;
+    display: none; /* Se muestra en pantallas pequeñas */
 }
 
-/* Estilo de los íconos dentro del botón de toggle */
 .sidebar-toggle-btn svg {
     fill: var(--header-icon-color);
-    width: 24px; /* Ajusta según sea necesario */
-    height: 24px; /* Ajusta según sea necesario */
+    width: 24px;
+    height: 24px;
 }
 
 /* Estilo de los ítems del menú */
 .menu-item {
     color: var(--primary-text-color);
-    margin-bottom: 1.8rem; /* Espacio entre íconos */
+    margin-bottom: 1.5rem; /* Asegura que las opciones de menú principal estén bien separadas */
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar texto e ícono */
-    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    align-items: center;
     width: 100px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Para posicionar el badge */
 }
 
-/* Estilo de los íconos en la barra lateral */
 .menu-item svg {
-    width: 36px; /* Tamaño del ícono */
-    height: 36px; /* Tamaño del ícono */
-    fill: var(--primary-text-color); /* Color del ícono */
-    margin-bottom: 0.5rem; /* Espacio entre ícono y texto */
+    width: 36px;
+    height: 36px;
+    fill: var(--primary-text-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Estilo del texto en los ítems del menú */
 .menu-item div {
-    font-size: 14px; /* Tamaño del texto */
+    font-size: 14px;
     text-align: center;
 }
 
-/* Estilo de los íconos y texto cuando se pasa el cursor */
 .menu-item:hover,
 .menu-item.active {
-    color: var(--primary-active-text-color); /* Color del texto en hover y activo */
+    color: var(--primary-active-text-color);
 }
 
 .menu-item:hover svg,
 .menu-item.active svg {
-    fill: var(--primary-active-text-color); /* Color del ícono en hover y activo */
-    transform: scale(1.2); /* Escalar el ícono en hover y activo */
+    fill: var(--primary-active-text-color);
+    transform: scale(1.2);
+}
+
+/* Estilo para el submenú */
+.submenu {
+    width: 100%; /* Asegura que el submenú ocupe todo el ancho disponible */
+    max-height: 0; /* Oculta el submenú por defecto */
+    overflow: hidden; /* Esconde el contenido del submenú cuando está oculto */
+    background-color: transparent; /* Fondo transparente */
+    margin: 0; /* Elimina márgenes innecesarios */
+    transition: max-height 0.3s ease; /* Transición suave para mostrar/ocultar */
+}
+
+.submenu.show {
+    max-height: 500px; /* Asegura suficiente espacio para que se despliegue el submenú */
+    margin-bottom: 1rem; /* Añade margen inferior para separar el último ítem del siguiente menú */
+}
+
+/* Estilo de los ítems del submenú */
+.submenu-item {
+    padding: 5px 10px; /* Ajuste de padding para una mejor alineación */
+    margin: 2px 3px; /* Margen vertical pequeño para evitar que se peguen al menú principal */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    cursor: pointer;
+    width: 94px; /* Asegura que el submenú ocupe todo el ancho disponible */
+    border-radius: 5px;
+}
+
+/* Estilo de los íconos dentro del submenú */
+.submenu-item svg {
+    margin-right: 0.5rem; /* Espacio entre el ícono y el texto */
+    fill: var(--primary-text-color);
+    width: 17px;
+    height: 17px;
+}
+
+/* Efecto hover y active para las opciones de submenú */
+.submenu-item:hover,
+.submenu-item.active {
+    background-color: rgba(245, 245, 245, 0.2); /* Color de fondo con 20% de opacidad */
+    transition: background-color 0.3s ease; /* Transición suave */
+    color: var(--primary-active-text-color); /* Cambia el color del texto e ícono en hover y active */
+}
+
+.submenu-item:hover svg,
+.submenu-item.active svg {
+    fill: var(--primary-active-text-color); /* Cambia el color del ícono en hover y active */
+    transform: scale(1.2);
 }
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 991.98px) {
     .sidebar {
         padding-top: 50px;
-        width: 100px; /* Ancho de la barra lateral por defecto */
-        transform: translateX(0); /* Muestra la barra lateral */
+        width: 100px;
+        transform: translateX(0);
         border-right: 2px solid black;
     }
 
-    /* Asegurarse de que los ítems del menú estén centrados */
     .menu-item {
-        margin-bottom: 1.5rem; /* Espacio más pequeño entre íconos para pantallas pequeñas */
+        margin-bottom: 1.0rem; /* Ajuste de margen para pantallas pequeñas */
     }
 }
 
+/* Estilo del badge con el ícono de flecha */
+.badge {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+}
+
+/* Estilo del ícono dentro del badge */
+.arrow-icon {
+    fill: var(--primary-text-color);
+}
+
+/* Solo mostrar el badge si el submenú está abierto */
+.badge {
+    display: flex;
+}
