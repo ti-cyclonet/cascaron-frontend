@@ -32,12 +32,14 @@ export default class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.optionsMenu = [
-      { id: '1', name: 'homeShotra', description: 'Home', url: '/home', icon: 'house-fill', type: 'menu_principal', idMPather: '0', order: '1', idApplication: '3' },
-      { id: '2', name: 'usersShotra', description: 'Users', url: '/users', icon: 'people-fill', type: 'menu_principal', idMPather: '0', order: '2', idApplication: '3' },
-      { id: '3', name: 'requestsShotra', description: 'Requests', url: '/requests', icon: 'file-text-fill', type: 'menu_principal', idMPather: '0', order: '3', idApplication: '3' },
-      { id: '4', name: 'settingsShotra', description: 'Settings', url: '/setup', icon: 'gear-fill', type: 'menu_principal', idMPather: '0', order: '4', idApplication: '3' }
-      // { id: '5', name: 'usersshotracreate', description: 'add', url: '/users', icon: 'person-add', type: 'submenu_n1', idmpather: '2', order: '1', idapplication: '3' },
-      // { id: '6', name: 'usershotradelete', description: 'delete', url: null, icon: 'person-dash', type: 'submenu_n1', idmpather: '2', order: '2', idapplication: '3' }
+      { id: '1', name: 'homeShotra', description: 'Home', url: '/home', icon: 'house-fill', type: 'main_menu', idMPather: null, order: '1', idApplication: '3' },
+      { id: '2', name: 'usersShotra', description: 'Users', url: '/users', icon: 'people-fill', type: 'main_menu', idMPather: null, order: '2', idApplication: '1' },
+      { id: '3', name: 'requestsShotra', description: 'Requests', url: '/requests', icon: 'file-text-fill', type: 'main_menu', idMPather: null, order: '3', idApplication: '3' },
+      { id: '4', name: 'settingsShotra', description: 'Settings', url: '/setup', icon: 'gear-fill', type: 'main_menu', idMPather: null, order: '4', idApplication: '3' }
+      //{ id: '5', name: 'usersShotraCreate', description: 'Add', url: '/users', icon: 'person-add', type: 'submenu_l1', idMPather: '2', order: '1', idApplication: '3' }
+      //{ id: '6', name: 'usersShotraDelete', description: 'Delete', url: null, icon: 'person-dash', type: 'submenu_l1', idMPather: '2', order: '2', idApplication: '3' }
+      //{ id: '7', name: 'requetsShotraCreate', description: 'Add', url: '/requests', icon: null, type: 'submenu_l1', idMPather: '3', order: '1', idApplication: '3' },
+      //{ id: '8', name: 'requetsShotraList', description: 'List', url: null, icon: null, type: 'submenu_l1', idMPather: '3', order: '2', idApplication: '3' }
     ];
   }
 

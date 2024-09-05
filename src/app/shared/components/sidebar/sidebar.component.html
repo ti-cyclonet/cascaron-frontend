@@ -1,7 +1,7 @@
 <div class="sidebar" id="sidebar">
   <div class="icon-menu pt-3">
     <ng-container *ngFor="let option of optionsMenu">
-      <ng-container *ngIf="option.type === 'menu_principal'">
+      <ng-container *ngIf="option.type === 'main_menu'">
         <a 
           [routerLink]="option.url"
           routerLinkActive="active"
