@@ -5,7 +5,7 @@ export interface OptionMenu {
     url: string | null;
     icon: string | null;
     type: string;
-    idMPather: string;
+    idMPather: string | null;
     order: string;
     idApplication: string;
   }
