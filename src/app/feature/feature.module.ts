@@ -8,16 +8,15 @@ import { UsersComponent } from './users/users.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
     HomeComponent,
     RequestsComponent,
     SetupComponent,
     UsersComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    SharedModule
   ]
 })
 export class FeatureModule { }
